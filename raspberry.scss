@@ -1,0 +1,207 @@
+/*! raspberry.css | https://github.com/bazitur/brackets-raspberry | MIT */
+
+//initial variables
+$grey-dark:  #131516;
+$grey:       #282828;
+$grey-light: #373737;
+
+$white-dark: #808080;
+$white:      #cccccc;
+
+$redbg:      #751212;
+$red:        #ff1717;
+$berry:      #e12d6b;
+$orange:     #dd4444;
+$lime:       #61da12;
+$green:      #5cac00;
+$teal:       #00d48b;
+$cyan:       #25d0f0;
+$blue:       #268bd2;
+$bluegrey:   #747e9e;
+
+// Derived variables
+$background: $grey-dark;
+$foreground: $white;
+
+// styles
+.cm-keyword            { color:      $berry; }  // function, var, True, $app
+.cm-atom               { color:       $lime; }  // #808080, inset, underline 
+.cm-number             { color:     $orange; }  // 0, 2
+.cm-def                { color:       $cyan; }  // $burger, $menu, __str__
+.cm-property           { color:      $green; }  // addEventListener, append, background-color
+.cm-operator           { color: $foreground; }  // =, +
+
+.cm-variable,
+.cm-variable-2         { color: $foreground; }  // document, box-shadow, parent
+.cm-variable-3         { color:       $blue; }  // burger, menu, self, hover
+
+.cm-string             { color:       $lime; }  // "hero-body", "title"
+.cm-string-2           { color:       $teal; }  // `template ${string}`
+
+.cm-type               { color:       $blue; }
+.cm-error              { color:        $red; }  // pading-right
+.cm-comment            { color: $white-dark; }  // <!-- Scripts -->, # comment
+.cm-meta               { color:      $white; }  // @app
+.cm-qualifier          { color:      $berry; }  // .CodeMirror, .fix-sized
+.cm-builtin            { color:       $cyan; }  // print, object, #css-id
+.cm-bracket,.cm-tag    { color:      $berry; }  // a, div, img, <, >, </
+.cm-attribute          { color:      $green; }  // class, href
+.cm-hr                 { color: $white-dark; }
+.cm-link               { color:       $blue; }
+
+.cm-header,
+.cm-strong             { font-weight:     bold;}
+.cm-em                 { font-style:      italic;}
+.cm-link               { text-decoration: underline;}
+.cm-strikethrough      { text-decoration: line-through;}
+
+// Generic
+.CodeMirror,
+.CodeMirror-scroll {
+  background-color: $background;
+  color: $foreground;
+}
+
+.CodeMirror-focused .CodeMirror-activeline-background {
+  background-color: #2f2f2f;
+}
+
+.show-line-padding .CodeMirror-focused .CodeMirror-activeline-background {
+  box-shadow: inset 15px 0 0 0 #000;
+}
+
+.CodeMirror-focused .CodeMirror-activeline {
+  .CodeMirror-gutter-elt {
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+  .inline-widget .CodeMirror-gutter-elt {
+    color: #767676;
+  }
+}
+
+
+/* Extra CSS */
+
+.CodeMirror-searching {
+  border-bottom: 2px dotted $berry;
+  background-color: transparent;
+  color: $foreground !important;
+  &.searching-current-match {
+    background-color: fade($berry, 75%);
+  }
+}
+
+.CodeMirror-cursor {
+  border-left: 1px solid $foreground !important;
+}
+
+.CodeMirror-gutters {
+  background-color: darken($background, 2%);
+  border-right: none;
+  box-shadow: inset 0px 0px 7px 5px rgba(0, 0, 0, 0.4);
+}
+
+.CodeMirror-linenumber {
+  color: $white-dark;
+}
+
+.CodeMirror .CodeMirror-selected {
+  background: $grey;
+}
+
+.CodeMirror-focused .CodeMirror-selected {
+  background: $grey-light;
+}
+
+.CodeMirror-matchingbracket,
+.CodeMirror-matchingtag {
+  background-color: $background;
+}
+.CodeMirror-matchingtag {
+  border-bottom: 1px solid $berry;
+}
+.CodeMirror-matchingbracket {
+  color: $foreground !important;
+  background-color: fade($berry, 50%);
+  font-weight: bolder;
+}
+
+.CodeMirror-overwrite .CodeMirror-cursor {
+  border-left: none !important;
+  border-bottom: 1px solid #fff;
+}
+
+
+/*
+    CodeMirror's use of descendant selectors for certain styling causes problems when editors are
+    nested because, for items in the inner editor, the left-hand clause in the selector will now
+    match either the actual containing CodeMirror instance *OR* the outer "host" CodeMirror instance.
+
+    TODO (issue #324): We'll still have problems if editors can be nested more than one level deep,
+    or if any other descendant-selector-driven CM styles can differ between inner & outer editors
+    (potential problem areas include line wrap and coloring theme: basically, anything in codemirror.css
+    that uses a descandant selector where the CSS class name to the left of the space is something
+    other than a vanilla .CodeMirror)
+ */
+
+.CodeMirror {
+  .CodeMirror {
+    background: transparent;
+  }
+  .CodeMirror .CodeMirror-gutters {
+    background: transparent;
+    border-right: none;
+  }
+  .CodeMirror .CodeMirror-activeline-background {
+    background: transparent;
+  }
+  .CodeMirror .CodeMirror-activeline .CodeMirror-gutter-elt {
+    background: transparent;
+    color: #767676;
+  }
+  .CodeMirror-focused .CodeMirror-activeline-background {
+    background: #2f2f2f;
+  }
+  .CodeMirror-focused .CodeMirror-activeline {
+    .CodeMirror-gutter-elt {
+      background: rgba(0, 0, 0, 0.2);
+      color: $white;
+    }
+  }
+}
+
+.CodeMirror-foldgutter-open:after {
+  color: darken($white-dark, 20%);
+  transition: color 0.56s;
+}
+
+.CodeMirror-foldgutter-folded:after {
+  color: $white-dark;
+}
+
+.CodeMirror.over-gutter,
+.CodeMirror-activeline {
+  .CodeMirror-foldgutter-open:after {
+    color: $white-dark;
+  }
+}
+
+.CodeMirror-foldmarker {
+  border: 1px solid $grey;
+  border-radius: 3px;
+  color: $white-dark;
+  background-color: transparent;
+}
+
+
+/* Non-editor styling */
+
+.image-view,
+.not-editor {
+  background-color: $background;
+}
+
+.view-pane .image-view {
+  color: $foreground;
+}
