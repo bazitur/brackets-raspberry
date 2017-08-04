@@ -1,6 +1,6 @@
-/*! raspberry.css | https://github.com/bazitur/brackets-raspberry | MIT */
+/*! raspberry.css | MIT license | https://github.com/bazitur/brackets-raspberry */
 
-//initial variables
+// initial variables
 $grey-dark:  #131516;
 $grey:       #282828;
 $grey-light: #373737;
@@ -54,7 +54,6 @@ $foreground: $white;
 .cm-em                 { font-style:      italic;}
 .cm-link               { text-decoration: underline;}
 .cm-strikethrough      { text-decoration: line-through;}
-
 // Generic
 .CodeMirror,
 .CodeMirror-scroll {
@@ -80,11 +79,8 @@ $foreground: $white;
   }
 }
 
-
-/* Extra CSS */
-
 .CodeMirror-searching {
-  border-bottom: 2px dotted $berry;
+  border-bottom: 2px dotted $lime;
   background-color: transparent;
   color: $foreground !important;
   &.searching-current-match {
@@ -99,7 +95,7 @@ $foreground: $white;
 .CodeMirror-gutters {
   background-color: darken($background, 2%);
   border-right: none;
-  box-shadow: inset 0px 0px 7px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 0px 7px 5px rgba(0, 0, 0, 0.2);
 }
 
 .CodeMirror-linenumber {
@@ -118,9 +114,11 @@ $foreground: $white;
 .CodeMirror-matchingtag {
   background-color: $background;
 }
+
 .CodeMirror-matchingtag {
   border-bottom: 1px solid $berry;
 }
+
 .CodeMirror-matchingbracket {
   color: $foreground !important;
   background-color: fade($berry, 50%);
