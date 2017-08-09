@@ -62,7 +62,7 @@ $foreground: $white;
 }
 
 .CodeMirror-focused .CodeMirror-activeline-background {
-  background-color: #2f2f2f;
+  background-color: $grey-dark;
 }
 
 .show-line-padding .CodeMirror-focused .CodeMirror-activeline-background {
