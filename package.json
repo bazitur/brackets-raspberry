@@ -3,7 +3,7 @@
     "title": "Raspberry",
     "description": "Dark theme with warm raspberry colors",
     "homepage": "https://github.com/bazitur/brackets-raspberry",
-    "version": "0.2",
+    "version": "0.2.0",
     "author": "Basil Miturich",
     "license": "MIT",
     "theme": {
