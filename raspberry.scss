@@ -1,23 +1,24 @@
 /*! raspberry.css | MIT license | https://github.com/bazitur/brackets-raspberry */
 
 // initial variables
-$grey-dark:  #131516;
-$grey:       #282828;
-$grey-light: #373737;
+$grey-dark:   #131516;
+$grey:        #282828;
+$grey-light:  #373737;
 
-$white-dark: #808080;
-$white:      #cccccc;
+$white-dark:  #808080;
+$white:       #d6d6d6;
+$white-light: #ececec;
 
-$redbg:      #751212;
-$red:        #ff1717;
-$berry:      #e12d6b;
-$orange:     #dd4444;
-$lime:       #61da12;
-$green:      #5cac00;
-$teal:       #00d48b;
-$cyan:       #25d0f0;
-$blue:       #268bd2;
-$bluegrey:   #747e9e;
+$redbg:       #751212;
+$red:         #ff1717;
+$berry:       #e12d6b;
+$orange:      #dd4444;
+$lime:        #61da12;
+$green:       #64bb00;
+$teal:        #00d48b;
+$cyan:        #25d0f0;
+$blue:        #268bd2;
+$bluegrey:    #747e9e;
 
 // Derived variables
 $background: $grey-dark;
@@ -72,7 +73,7 @@ $foreground: $white;
 .CodeMirror-focused .CodeMirror-activeline {
   .CodeMirror-gutter-elt {
     background: rgba(0, 0, 0, 0.2);
-    color: #fff;
+    color: $white-light;
   }
   .inline-widget .CodeMirror-gutter-elt {
     color: #767676;
@@ -80,7 +81,7 @@ $foreground: $white;
 }
 
 .CodeMirror-searching {
-  border-bottom: 2px dotted $lime;
+  border-bottom: 1px dashed $lime;
   background-color: transparent;
   color: $foreground !important;
   &.searching-current-match {
@@ -107,7 +108,7 @@ $foreground: $white;
 }
 
 .CodeMirror-focused .CodeMirror-selected {
-  background: $grey-light;
+  background: mix($grey, $grey-light);
 }
 
 .CodeMirror-matchingbracket,
@@ -170,8 +171,8 @@ $foreground: $white;
 }
 
 .CodeMirror-foldgutter-open:after {
-  color: darken($white-dark, 20%);
-  transition: color 0.56s;
+  color: darken($white-dark, 30%);
+  transition: color 0.75s;
 }
 
 .CodeMirror-foldgutter-folded:after {
