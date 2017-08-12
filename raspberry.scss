@@ -40,7 +40,8 @@ $foreground: $white;
 .cm-string-2           { color:       $teal; }  // `template ${string}`
 
 .cm-type               { color:       $blue; }
-.cm-error              { color:        $red; }  // pading-right
+.cm-error              { color:        $red;    // pading-right
+                         border-bottom: 1px dashed $red; }
 .cm-comment            { color: $white-dark; }  // <!-- Scripts -->, # comment
 .cm-meta               { color:      $white; }  // @app
 .cm-qualifier          { color:      $berry; }  // .CodeMirror, .fix-sized
@@ -108,7 +109,7 @@ $foreground: $white;
 }
 
 .CodeMirror-focused .CodeMirror-selected {
-  background: mix($grey, $grey-light);
+  background: mix($grey, $grey-light) !important;
 }
 
 .CodeMirror-matchingbracket,
